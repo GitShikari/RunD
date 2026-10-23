@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RUN D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+<div id="flash"></div>
+
+<div id="hud" class="hidden">
+  <span id="hudTime">TIME 0.0s</span>
+  <button id="pauseBtn" title="Pause (Esc)">&#10073;&#10073;</button>
+  <span id="hudRaj">FISHY RAJ: IN LECTURE...</span>
+</div>
+<div id="banner" class="hidden"></div>
+
+<section id="paused" class="screen hidden">
+  <h1 class="title">PAUSED</h1>
+  <p class="tag">Press Esc or the button to resume</p>
+  <button id="resumeBtn" class="btn">RESUME</button>
+</section>
+
+<section id="offer" class="screen hidden">
+  <h1 class="title red">CAUGHT!</h1>
+  <p class="tag">Answer these questions to respawn</p>
+  <p id="offerTimer" class="tag small"></p>
+  <div class="row">
+    <button id="respawnBtn" class="btn">RESPAWN</button>
+    <button id="declineBtn" class="btn grey">GIVE UP</button>
+  </div>
+</section>
+
+<section id="question" class="screen hidden">
+  <p class="tag" style="margin:6px 0">SOLVE TO RESPAWN &mdash; enter the numerical answer</p>
+  <img id="qImg" alt="question" />
+  <p id="qTimer" class="tag small"></p>
+  <input id="qInput" type="number" inputmode="numeric" autocomplete="off" />
+  <button id="qSubmit" class="btn">SUBMIT</button>
+</section>
+
+<section id="menu" class="screen">
+  <h1 class="title">RUN D</h1>
+  <p class="tag">Mechanics lecture. Attendance: 3%. Backlogs: yes.</p>
+  <button id="playBtn" class="btn">PLAY</button>
+  <p class="help">WASD / Arrow keys &mdash; turn only at junctions &mdash; Fishy Raj leaves 2s after you and runs at 1.25&times; your speed</p>
+</section>
+
+<section id="over" class="screen hidden">
+  <h1 class="title red">GAME OVER</h1>
+  <p id="overMsg" class="tag">ATTENDANCE MARKED: PRESENT.</p>
+  <p id="overTime" class="tag small"></p>
+  <button id="againBtn" class="btn">PLAY AGAIN</button>
+</section>
+
+<audio id="aud-mistri"  src="assets/mistri.mpeg"   preload="auto"></audio>
+<audio id="aud-rage"    src="assets/rage.mpeg"     preload="auto" loop></audio>
+<audio id="aud-catch"   src="assets/catch.mpeg"    preload="auto"></audio>
+<audio id="aud-question" src="assets/question.mpeg" preload="auto"></audio>
+<audio id="aud-respawn" src="assets/respawn.mpeg"  preload="auto"></audio>
+<audio id="aud-lost"    src="assets/lost.mpeg"     preload="auto"></audio>
+<audio id="aud-home"    src="assets/homecoming.mpeg" preload="auto" loop></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
